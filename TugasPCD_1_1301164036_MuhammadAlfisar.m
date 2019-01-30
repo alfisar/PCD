@@ -16,22 +16,30 @@ classdef TugasPCD_1_1301164036_MuhammadAlfisar < matlab.apps.AppBase
             [filename, pathname] = uigetfile ({'*.jpg'; '*.png'},'File Select');
             image = strcat(pathname,filename);
             imshow(image,'Parent',app.UIAxes);
-            figure, imshow(image);
             
             images = imread(image);
             image = images;
-            dirr = strcat('/home/mylinux/Perkuliahan/semester 6/PCD/image/',filename);
-            imwrite(images,dirr)
             save('matlab','image');
             save('matlab','images','-append');
         end
         
         function GrayImageButtonPushed(app, ~)
-           tempp = load('matlab')
-           images = tempp.images;
-           images = rgb2gray(images);
-           figure, imshow(images);
-           save('matlab','images','-append');
+           temp = load('matlab')
+           img = temp.images;
+           [r, c, colormap] = size(img);
+           merah = 0.0;
+           hijau = 0.0;
+           biru = 0.0;
+           for i=1:r
+                for j=1:c
+                     merah = merah + double(img(i,j,1));
+                     hijau = hijau + double(img(i,j,2));
+                     biru = biru + double(img(i,j,3));   
+                end
+            end
+            hasil = (merah + hijau + biru);
+            images = (merah/hasil)*img(:,:,1) + (hijau/hasil)*img(:,:,2) + (biru/hasil)*img(:,:,3);
+            imshow(images,'Parent',app.UIAxes);
         end
         
         function RotateButtonPushed(app, ~)
@@ -45,6 +53,7 @@ classdef TugasPCD_1_1301164036_MuhammadAlfisar < matlab.apps.AppBase
         function ClearButtonPushed(app, ~)
            tempp = load('matlab');
            images = tempp.image;
+           imshow(images,'Parent',app.UIAxes);
            save('matlab','images','-append');
         end
         
