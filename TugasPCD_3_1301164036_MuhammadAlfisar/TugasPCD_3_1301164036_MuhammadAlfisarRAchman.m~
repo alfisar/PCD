@@ -200,11 +200,11 @@ function Perkecil_Callback(hObject, eventdata, handles)
                      temp2 = temp2 + 1; % Melakukan penambahan sebesar 1 kepada temp2
                      temp = img(i,j,:) + img((i+1),j,:) + img(i,(j+1),:) + img((i+1),(j+1),:); % Melakukan penambahan dari setiap pixel sebanyak 4 pixel dan di taruh ke dalam temp
                      temp = temp / 4; % Melakukan pembagian terhadap nilai temp
-                     img2(temp1,temp2,:) = temp; % Melakukan pengisian data ke dalam img2 dengan nilai temp
+                     img2(temp1,temp2,:) = temp; % Melakuakn pengisian data ke dalam img2 dengan nilai temp
                      temp = 0; % Mereset nilai temp
-                     j = j+2; % Melakukan penambahan sebesar 2 kepada j
+                     j = j+2; % Melakukan penambahan sebesar 1 kepada j
                 end
-                i = i+2; % Melakukan penambahan sebesar 2 kepada i
+                i = i+2; % Melakukan penambahan sebesar 1 kepada i
             end             
             disp(size(img)); % Menampilkan ukuran dari img
             disp(size(img2));% Menampilkan ukuran dari img2
@@ -214,7 +214,6 @@ function Perkecil_Callback(hObject, eventdata, handles)
 
 % --- Executes on button press in Crop.
 function Crop_Callback(hObject, eventdata, handles)
-
     img = handles.image1; % Mendapatkan Data image yang telah dimasukan ke dalam data handles
     x1 = str2double(get(handles.X1, 'string')); % Mendapatkan Nilai dari edit text X1
     x2 = str2double(get(handles.X2, 'string')); % Mendapatkan Nilai dari edit text X2
@@ -222,12 +221,12 @@ function Crop_Callback(hObject, eventdata, handles)
     y2 = str2double(get(handles.Y2, 'string')); % Mendapatkan Nilai dari edit text Y2
     img2 = []; % Menginisialisasikan variable img2   
     temp = 0; % Menginisialisasikan variable img2   
-    for i=x1 : x2 % Melakukan penjelajahan dari pixel X1 sampai X2
-        temp = temp+1; % Melakukan penambahan sebesar 1 kepada temp1
-        temp2 = 1 % Mereset nilai temp2
-        for j=y1 : y2 % Melakukan penjelajahan dari pixel Y1 sampai Y2
-            img2(temp,temp2,:) = img(i,j,:); % Melakuakn pengisian data ke dalam img2 dengan nilai img
-            temp2 = temp2 + 1; % Melakukan penambahan sebesar 1 kepada temp2
+    for i=x1 : x2
+        temp = temp+1;
+        temp2 = 1
+        for j=y1 : y2
+            img2(temp,temp2,:) = img(i,j,:);
+            temp2 = temp2 + 1;
         end
     end
     
