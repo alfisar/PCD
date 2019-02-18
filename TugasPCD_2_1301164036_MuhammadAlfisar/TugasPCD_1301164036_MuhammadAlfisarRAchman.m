@@ -22,7 +22,7 @@ function varargout = TugasPCD_1301164036_MuhammadAlfisarRAchman(varargin)
 
 % Edit the above text to modify the response to help TugasPCD_1301164036_MuhammadAlfisarRAchman
 
-% Last Modified by GUIDE v2.5 31-Jan-2019 01:19:25
+% Last Modified by GUIDE v2.5 12-Feb-2019 19:43:29
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -110,3 +110,17 @@ function GrayScale_Callback(hObject, eventdata, handles)
             image = (merah/hasil)*img(:,:,1) + (hijau/hasil)*img(:,:,2) + (biru/hasil)*img(:,:,3);
             axes(handles.axes1);
             imshow(image);
+
+
+% --- Executes on button press in Kurang.
+function Kurang_Callback(hObject, eventdata, handles)
+% hObject    handle to Kurang (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in Tambah.
+function Tambah_Callback(hObject, eventdata, handles)
+% hObject    handle to Tambah (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
