@@ -1,30 +1,5 @@
 function varargout = TugasPCD_4_1301164036_MuhammadAlfisarRAchman(varargin)
-%TUGASPCD_4_1301164036_MUHAMMADALFISARRACHMAN MATLAB code file for TugasPCD_4_1301164036_MuhammadAlfisarRAchman.fig
-%      TUGASPCD_4_1301164036_MUHAMMADALFISARRACHMAN, by itself, creates a new TUGASPCD_4_1301164036_MUHAMMADALFISARRACHMAN or raises the existing
-%      singleton*.
-%
-%      H = TUGASPCD_4_1301164036_MUHAMMADALFISARRACHMAN returns the handle to a new TUGASPCD_4_1301164036_MUHAMMADALFISARRACHMAN or the handle to
-%      the existing singleton*.
-%
-%      TUGASPCD_4_1301164036_MUHAMMADALFISARRACHMAN('Property','Value',...) creates a new TUGASPCD_4_1301164036_MUHAMMADALFISARRACHMAN using the
-%      given property value pairs. Unrecognized properties are passed via
-%      varargin to TugasPCD_4_1301164036_MuhammadAlfisarRAchman_OpeningFcn.  This calling syntax produces a
-%      warning when there is an existing singleton*.
-%
-%      TUGASPCD_4_1301164036_MUHAMMADALFISARRACHMAN('CALLBACK') and TUGASPCD_4_1301164036_MUHAMMADALFISARRACHMAN('CALLBACK',hObject,...) call the
-%      local function named CALLBACK in TUGASPCD_4_1301164036_MUHAMMADALFISARRACHMAN.M with the given input
-%      arguments.
-%
-%      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
-%      instance to run (singleton)".
-%
-% See also: GUIDE, GUIDATA, GUIHANDLES
 
-% Edit the above text to modify the response to help TugasPCD_4_1301164036_MuhammadAlfisarRAchman
-
-% Last Modified by GUIDE v2.5 28-Feb-2019 00:23:14
-
-% Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
                    'gui_Singleton',  gui_Singleton, ...
@@ -247,92 +222,331 @@ function Crop_Callback(hObject, eventdata, handles)
     
     % --- Executes on button press in Histogram.
 function Histogram_Callback(hObject, eventdata, handles)
-      img = handles.image1;
-      [r, c, colormap] = size(img);
-      red = [];
-      green = [];
-      blue = [];
-      temp = [];
-      m = 0;
-      h = 0;
-      b = 0;
+      img = handles.image1; % Mendapatkan Data image yang telah dimasukan ke dalam data handles
+      [r, c, colormap] = size(img); % Mengisi nilai r,c,dan colormap dengan size yang ada di dalam img
+      red = []; % Mendeklarasikan variable red dengan array kosong
+      green = []; % Mendeklarasikan variable green dengan array kosong
+      blue = []; % Mendeklarasikan variable blue dengan array kosong
+      temp = []; % Mendeklarasikan variable temp dengan array kosong
       
-      if colormap ~= 1
-        for i=0 : 255
-            for j=1:r
-                for k=1:c
-                    if i == img(j,k,1)
-                        m = m + 1;
+      m = 0; % Mendeklarasikan variable m dengan nilai 0
+      h = 0; % Mendeklarasikan variable h dengan nilai 0
+      b = 0; % Mendeklarasikan variable b dengan nilai 0
+      
+      if colormap ~= 1 % Pengecekan apakah gambar greyscale atau tidak
+          
+        for i=0 : 255 % Berjalan dari 0 sampai 255
+            for j=1:r % Menjelajahi semua pixel di r
+                for k=1:c % Menjelajahi semua pixel di c
+                    if i == img(j,k,1) % Perbandingan apakah nilai i saat ini sama dengan nilai img(j,k,1) saat ini
+                        m = m + 1; % Menambahkan nilai m dengan 1  
                     end
-                    if i == img(j,k,2)
-                        h = h + 1;
+                    if i == img(j,k,2) % Perbandingan apakah nilai i saat ini sama dengan nilai img(j,k,2) saat ini
+                        h = h + 1; % Menambahkan nilai h dengan 1  
                     end
-                    if i == img(j,k,3)
-                        b = b + 1;    
+                    if i == img(j,k,3) % Perbandingan apakah nilai i saat ini sama dengan nilai img(j,k,3) saat ini
+                        b = b + 1; % Menambahkan nilai b dengan 1       
                     end
                 end
             end
-            red(i+1) = m;
-            green(i+1) = h;
-            blue(i+1) = b;
-            temp(i+1) = i;
-            m = 0;
-            h = 0;
-            b = 0;
+            
+            red(i+1) = m; % Mengisi nilai red indeks i+1 dengan nilai m saat ini
+            green(i+1) = h; % Mengisi nilai green indeks i+1 dengan nilai h saat ini
+            blue(i+1) = b; % Mengisi nilai blue indeks i+1 dengan nilai b saat ini
+            temp(i+1) = i; % Mengisi nilai temp indeks i+1 dengan nilai i saat ini
+            m = 0; % Mereset nilai varible m
+            h = 0; % Mereset nilai varible h
+            b = 0; % Mereset nilai varible b
+            
         end
         figure,bar(temp,red,'FaceColor','red');
-        ylim([0,20000])
-        title('RED');
+        ylim([0,15000]) % Membatasi y hingga 15000 
+        title('RED'); %Memberikan title pada figure
         figure,bar(temp,green,'FaceColor','green');
-        ylim([0,20000])
-        title('GREEN');
+        ylim([0,15000]) % Membatasi y hingga 15000 
+        title('GREEN'); %Memberikan title pada figure
         figure,bar(temp,blue);
-        ylim([0,20000])
-        title('BLUE');
+        ylim([0,15000]) % Membatasi y hingga 15000 
+        title('BLUE'); %Memberikan title pada figure
         
       else
-        for i=0 : 255
-           for j=1:r
-               for k=1:c
-                    if i == img(j,k)
-                        m = m + 1;
+         for i=0 : 255 % Berjalan dari 0 sampai 255
+            for j=1:r % Menjelajahi semua pixel di r
+                for k=1:c % Menjelajahi semua pixel di c
+                    if i == img(j,k) % Perbandingan apakah nilai i saat ini sama dengan nilai img(j,k,1) saat ini
+                        m = m + 1; % Menambahkan nilai m dengan 1  
+                    end 
+               end
+           end
+           red(i+1) = m; % Mengisi nilai red indeks i + 1 dengan nilai m
+           temp(i+1) = i; % Mengisi nilai temp indeks i + 1 dengan nilai i
+           m = 0; % Mereset nilai variable m
+        end
+        figure,bar(temp,red,'FaceColor','black');
+        ylim([0,15000])  % Membatasi y hingga 15000 
+        title('Histogram'); %Memberikan title pada figure
+        
+      end
+      
+% --- Executes on button press in Histeq.
+function Histeq_Callback(hObject, eventdata, handles)
+      img = handles.image1; % Mendapatkan Data image yang telah dimasukan ke dalam data handles
+      figure,imshow(uint8(img)); % Menampilkan gambar kedalam figure
+      
+      [row, cow, colormap] = size(img);% Mengisi nilai row,cow,dan colormap dengan size yang ada di dalam img
+      
+      red = []; % Mendeklarasikan variable red dengan array kosong
+      green = []; % Mendeklarasikan variable green dengan array kosong
+      blue = []; % Mendeklarasikan variable blue dengan array kosong
+      temp = []; % Mendeklarasikan variable temp dengan array kosong
+      bb = []; % Mendeklarasikan variable bb dengan array kosong
+      ba = []; % Mendeklarasikan variable ba dengan array kosong
+      
+      m = 0; % Mendeklarasikan variable m dengan nilai 0
+      h = 0; % Mendeklarasikan variable h dengan nilai 0
+      b = 0; % Mendeklarasikan variable b dengan nilai 0
+      bb2 = 0; % Mendeklarasikan variable bb2 dengan nilai 0 yang bergungsi sebagai batas bawah 2
+      ba2 = 255; % Mendeklarasikan variable ba2 dengan nilai 0 yang bergungsi sebagai batas atas 2
+      if colormap ~= 1 % Pengecekan apakah gambar greyscale atau tidak
+          
+        for i=0 : 255 % Berjalan dari 0 sampai 255
+            for j=1:row % Menjelajahi semua pixel di row
+                for k=1:cow % Menjelajahi semua pixel di cow
+                    if i == img(j,k,1) % Perbandingan apakah nilai i saat ini sama dengan nilai img(j,k,1) saat ini
+                        m = m + 1; % Menambahkan nilai m dengan 1
+                    end
+                    if i == img(j,k,2) % Perbandingan apakah nilai i saat ini sama dengan nilai img(j,k,2) saat ini
+                        h = h + 1; % Menambahkan nilai h dengan 1
+                    end
+                    if i == img(j,k,3) % Perbandingan apakah nilai i saat ini sama dengan nilai img(j,k,3) saat ini
+                        b = b + 1;  % Menambahkan nilai b dengan 1  
+                    end
+                end
+            end
+            
+            red(i+1) = m; % Mengisi nilai red indeks i+1 dengan nilai m saat ini
+            green(i+1) = h;  % Mengisi nilai green indeks i+1 dengan nilai h saat ini
+            blue(i+1) = b;  % Mengisi nilai blue indeks i+1 dengan nilai b saat ini
+            temp(i+1) = i;  % Mengisi nilai temp indeks i+1 dengan nilai i saat ini
+            m = 0; % Mereset nilai varible m
+            h = 0; % Mereset nilai varible h
+            b = 0; % Mereset nilai varible b
+            
+        end
+        
+         
+        r = sum(red); % Mengisi nilai r dengan jumlah semua nilai yang ada di red
+        g = sum(green); % Mengisi nilai g dengan jumlah semua nilai yang ada di green
+        b = sum(blue); % Mengisi nilai b dengan jumlah semua nilai yang ada di blue
+        
+        cek = false; % Mendeklarasikan nilai cek dengan false
+        cr = false;  % Mendeklarasikan nilai cr dengan false
+        cg = false;  % Mendeklarasikan nilai cg dengan false
+        cb = false;  % Mendeklarasikan nilai cb dengan false
+        
+        i = 0; % Mereset nilai i
+        while (i <= 256) && (cek ~= true) % Perulangan untuk mencari nilai batas bawah 1
+            i= i + 1; % Menambahkan nilai i dengan 1
+            
+            if (cr ~= true) % Pengecekan apakah variable cr tidak samadengan true 
+                mr = red(i); % Mengisi nilai mr dengan nilai di red indeks ke i
+                mr = (mr/r)*100; % Mengisi nilai mr dengan nilai mr dibagi dengan r setelah itu di kali 100
+                if(mr >= 0.2) % Pengecekan apakah mr lebih besar dari 0.2
+                    cr = true; % Mengisi nilai cr dengan true
+                    ir = i; %Mengisi nilai ir dengan i
+                end
+            end
+            
+            if (cg ~= true)  % Pengecekan apakah variable cg tidak samadengan true 
+                mg = green(i); % Mengisi nilai mg dengan nilai di green indeks ke i
+                mg = (mg/g)*100;  % Mengisi nilai mg dengan nilai mg dibagi dengan g setelah itu di kali 100
+                if(mg >= 0.2) % Pengecekan apakah mg lebih besar dari 0.2
+                    cg = true; % Mengisi nilai cg dengan true
+                    ig = i; %Mengisi nilai ig dengan i
+                end
+            end
+            
+            if (cb ~= true) % Pengecekan apakah variable cb tidak samadengan true 
+                mb = blue(i); % Mengisi nilai mb dengan nilai di blue indeks ke i
+                mb = (mb/b)*100; % Mengisi nilai mb dengan nilai mb dibagi dengan b setelah itu di kali 100
+                if(mb >= 0.2) % Pengecekan apakah mb lebih besar dari 0.2
+                    cb = true; % Mengisi nilai cb dengan true
+                    ib = i; %Mengisi nilai ib dengan i
+                end
+            end
+            
+            if(cg == true)&&(cr==true)&&(cb==true) % Pengecekan apakah cg,cr,dan cb bernilai true
+                cek = true; % Mengisi nilai cek dengan true
+            end
+        end
+        
+        bb(1) = temp(ir); % Mengisi nilai bb indeks 1 dengan nilai pada temp indeks ir
+        bb(2) = temp(ig); % Mengisi nilai bb indeks 2 dengan nilai pada temp indeks ig
+        bb(3) = temp(ib); % Mengisi nilai bb indeks 3 dengan nilai pada temp indeks ib
+        
+        cek = false; % Mereset nilai cek
+        cr = false; % Mereset nilai cr
+        cg = false; % Mereset nilai cg
+        cb = false; % Mereset nilai cb
+        
+        i = 256; % Mereset nilai i dengan nilai 256
+        while (i >= 0) && (cek ~= true) % Perulangan untuk mencari nilai batas atas 1
+            i= i - 1; % Menambahkan nilai i dengan 1
+            
+            if (cr ~= true) % Pengecekan apakah variable cr tidak samadengan true 
+                mr = red(i); % Mengisi nilai mr dengan nilai di red indeks ke i
+                mr = (mr/r)*100; % Mengisi nilai mr dengan nilai mr dibagi dengan r setelah itu di kali 100
+                if(mr >= 0.2) % Pengecekan apakah mr lebih besar dari 0.2
+                    cr = true; % Mengisi nilai cr dengan true
+                    ir = i; %Mengisi nilai ir dengan i
+                end
+            end
+            
+            if (cg ~= true) % Pengecekan apakah variable cg tidak samadengan true 
+                mg = green(i); % Mengisi nilai mg dengan nilai di green indeks ke i
+                mg = (mg/g)*100; % Mengisi nilai mg dengan nilai mg dibagi dengan g setelah itu di kali 100
+                if(mg >= 0.2) % Pengecekan apakah mg lebih besar dari 0.2
+                    cg = true; % Mengisi nilai cg dengan true
+                    ig = i; %Mengisi nilai ig dengan i
+                end
+            end
+            
+            if (cb ~= true) % Pengecekan apakah variable cb tidak samadengan true 
+                mb = blue(i); % Mengisi nilai mb dengan nilai di blue indeks ke i
+                mb = (mb/b)*100; % Mengisi nilai mb dengan nilai mb dibagi dengan b setelah itu di kali 100
+                if(mb >= 0.2) % Pengecekan apakah mb lebih besar dari 0.2
+                    cb = true; % Mengisi nilai cb dengan true
+                    ib = i; %Mengisi nilai ib dengan i
+                end
+            end
+            if(cg == true)&&(cr==true)&&(cb==true)% Pengecekan apakah cg,cr,dan cb bernilai true
+                cek = true; % Mengisi nilai cek dengan true
+            end
+        end
+        
+        ba(1) = temp(ir); % Mengisi nilai bb indeks 1 dengan nilai pada temp indeks ir
+        ba(2) = temp(ig); % Mengisi nilai bb indeks 2 dengan nilai pada temp indeks ig
+        ba(3) = temp(ib); % Mengisi nilai bb indeks 3 dengan nilai pada temp indeks ib
+     
+        
+        for j=1:row % Menjelahi semua pixel yang berada sampai row
+              for k=1:cow % Menjelahi semua pixel yang berada di cow
+                  img(j,k,1) = uint8(round(bb2 + ((img(j,k,1) - bb2) * ((ba2-bb2)/(ba(1)-bb(1)))))); % Mengisi nili img(j,k,1) dengan rumus perbandingan untuk histogram equalization
+                  img(j,k,2) = uint8(round(bb2 + ((img(j,k,2) - bb2) * ((ba2-bb2)/(ba(2)-bb(2)))))); % Mengisi nili img(j,k,2) dengan rumus perbandingan untuk histogram equalization
+                  img(j,k,3) = uint8(round(bb2 + ((img(j,k,3) - bb2) * ((ba2-bb2)/(ba(3)-bb(3)))))); % Mengisi nili img(j,k,3) dengan rumus perbandingan untuk histogram equalization
+              end
+        end 
+
+        for i=0 : 255 % Berjalan dari 0 sampai 255
+            for j=1:row % Menjelajahi semua pixel di row
+                for k=1:cow % Menjelajahi semua pixel di cow
+                    if i == img(j,k,1) % Perbandingan apakah nilai i saat ini sama dengan nilai img(j,k,1) saat ini
+                        m = m + 1; % Menambahkan nilai m dengan 1
+                    end
+                    if i == img(j,k,2) % Perbandingan apakah nilai i saat ini sama dengan nilai img(j,k,2) saat ini
+                        h = h + 1; % Menambahkan nilai h dengan 1
+                    end
+                    if i == img(j,k,3) % Perbandingan apakah nilai i saat ini sama dengan nilai img(j,k,3) saat ini
+                        b = b + 1;  % Menambahkan nilai b dengan 1  
+                    end
+                end
+            end
+            
+            red(i+1) = m; % Mengisi nilai red indeks i+1 dengan nilai m saat ini
+            green(i+1) = h;  % Mengisi nilai green indeks i+1 dengan nilai h saat ini
+            blue(i+1) = b;  % Mengisi nilai blue indeks i+1 dengan nilai b saat ini
+            temp(i+1) = i;  % Mengisi nilai temp indeks i+1 dengan nilai i saat ini
+            m = 0; % Mereset nilai varible m
+            h = 0; % Mereset nilai varible h
+            b = 0; % Mereset nilai varible b
+            
+        end
+          
+        figure,bar(temp,red,'FaceColor','red');
+        ylim([0,15000])
+        title('RED Histeq');
+        figure,bar(temp,green,'FaceColor','green');
+        ylim([0,15000])
+        title('GREEN Histeq');
+        figure,bar(temp,blue);
+        ylim([0,15000])
+        title('BLUE Histeq');
+        
+      else
+        for i=0 : 255 % Berjalan dari 0 sampai 255
+           for j=1:row % Menjelajahi semua pixel di row
+               for k=1:cow % Menjelajahi semua pixel di cow
+                    if i == img(j,k) % Perbandingan apakah nilai i saat ini sama dengan nilai img(j,k) saat ini
+                        m = m + 1; % Menambahkan nilai m dengan 1
                     end      
                end
            end
-           red(i+1) = m;
-           temp(i+1) = i;
-           m = 0;
+           
+           red(i+1) = m;  % Mereset nilai varible m
+           temp(i+1) = i; % Mengisi nilai temp indeks i+1 dengan nilai i saat ini
+           m = 0; % Mereset nilai varible m
+           
+        end
+        
+        r = sum(red); % Mengisi nilai r dengan jumlah semua nilai yang ada di red
+      
+        cr = false; % Mendeklarasikan nilai cr dengan false
+        
+        i = 0; % Mereset nilai i
+        while (i <= 256) && (cr ~= true) % Perulangan untuk mencari nilai batas bawah 1
+            i= i + 1; % Menambahkan nilai i dengan 1
+            if (cr ~= true) % Pengecekan apakah variable cr tidak samadengan true 
+                mr = red(i); % Mengisi nilai mr dengan nilai di red indeks ke i
+                mr = (mr/r)*100; % Mengisi nilai mr dengan nilai mr dibagi dengan r setelah itu di kali 100
+                if(mr >= 0.2) % Pengecekan apakah mr lebih besar dari 0.2
+                    cr = true; % Mengisi nilai cr dengan true
+                    ir = i; % Mengisi nilai ir dengan i
+                end
+            end
+        end
+        bb1 = temp(ir); % Mengisi nilai bb1 dengan temp(ir)
+        
+        cr = false; %Mereset nilai cr dengan false
+        
+        i = 256; % Mereset nilai i dengan 256
+        while (i >= 0) && (cr ~= true)
+            i= i - 1; % Mengurangi nilai i dengan 1
+            if (cr ~= true)  % Pengecekan apakah variable cr tidak samadengan true 
+                mr = red(i);  % Mengisi nilai mr dengan nilai di red indeks ke i
+                mr = (mr/r)*100; % Mengisi nilai mr dengan nilai mr dibagi dengan r setelah itu di kali 100
+                if(mr >= 0.2) % Pengecekan apakah mr lebih besar dari 0.2
+                    cr = true; % Mengisi nilai cr dengan true
+                    ir = i; % Mengisi nilai ir dengan i
+                end
+            end
+        end % Perulangan untuk mencari nilai batas atas 1
+        ba1 = temp(ir); % Mengisi nilai bb1 dengan temp(ir)
+        
+        for j=1:row % Menjelahi semua pixel yang berada sampai row
+              for k=1:cow % Menjelahi semua pixel yang berada di cow
+                  img(j,k) = uint8(round(bb2 + ((img(j,k) - bb2) * ((ba2-bb2)/(ba1-bb2))))); % Mengisi nili img(j,k) dengan rumus perbandingan untuk histogram equalization
+              end
+        end 
+
+        for i=0 : 255 % Berjalan dari 0 sampai 255
+            for j=1:row % Menjelajahi semua pixel di row
+                for k=1:cow % Menjelajahi semua pixel di cow
+                    if i == img(j,k) % Perbandingan apakah nilai i saat ini sama dengan nilai img(j,k,1) saat ini
+                        m = m + 1; % Menambahkan nilai m dengan 1
+                    end
+                end
+            end
+            
+            red(i+1) = m; % Mengisi nilai red indeks i+1 dengan nilai m saat ini
+            temp(i+1) = i; % Mengisi nilai temp indeks i+1 dengan nilai m saat ini
+            m = 0; % Mereset nilai m dengan 0
         end
         figure,bar(temp,red,'FaceColor','black');
-        ylim([0,20000])
-        title('Histogram');
+        ylim([0,15000]);
+        title('Histeq');
       end
-      s = sum(green)
-      max1 = min(red);
-      max2 = min(green);
-      max3 = min(blue);
-      temp1 = false;
-      temp2 = false;
-      temp3 = false;
-      for i = 1 : 256
-        if (max1 == red(i)) && (temp1 ~= true)
-            m = i;
-            temp1 = true;
-        end
-        if (max2 == green(i)) && (temp2 ~= true)
-            g = i;
-            temp2 = true;
-        end
-        if (max3 == blue(i)) && (temp3 ~= true)
-            b = i;
-            temp3 = true;
-        end
-      end
-%       disp('blue');
-%       m = temp(b);
-%       disp(s);
-%      
-
+      
+      figure,imshow(uint8(img));
 
 function X2_Callback(hObject, eventdata, handles)
 % hObject    handle to X2 (see GCBO)
@@ -428,5 +642,6 @@ end
 
 
    
+
 
 
