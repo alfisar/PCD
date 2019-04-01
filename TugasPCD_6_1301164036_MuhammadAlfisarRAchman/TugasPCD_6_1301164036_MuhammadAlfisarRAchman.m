@@ -1,10 +1,10 @@
-function varargout = TugasPCD_5_1301164036_MuhammadAlfisarRAchman(varargin)
+function varargout = TugasPCD_6_1301164036_MuhammadAlfisarRAchman(varargin)
 
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
                    'gui_Singleton',  gui_Singleton, ...
-                   'gui_OpeningFcn', @TugasPCD_5_1301164036_MuhammadAlfisarRAchman_OpeningFcn, ...
-                   'gui_OutputFcn',  @TugasPCD_5_1301164036_MuhammadAlfisarRAchman_OutputFcn, ...
+                   'gui_OpeningFcn', @TugasPCD_6_1301164036_MuhammadAlfisarRAchman_OpeningFcn, ...
+                   'gui_OutputFcn',  @TugasPCD_6_1301164036_MuhammadAlfisarRAchman_OutputFcn, ...
                    'gui_LayoutFcn',  [], ...
                    'gui_Callback',   []);
 if nargin && ischar(varargin{1})
@@ -19,8 +19,8 @@ end
 % End initialization code - DO NOT EDIT
 
 
-% --- Executes just before TugasPCD_5_1301164036_MuhammadAlfisarRAchman is made visible.
-function TugasPCD_5_1301164036_MuhammadAlfisarRAchman_OpeningFcn(hObject, eventdata, handles, varargin)
+% --- Executes just before TugasPCD_6_1301164036_MuhammadAlfisarRAchman is made visible.
+function TugasPCD_6_1301164036_MuhammadAlfisarRAchman_OpeningFcn(hObject, eventdata, handles, varargin)
 % This function has no output args, see OutputFcn.
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -28,18 +28,18 @@ function TugasPCD_5_1301164036_MuhammadAlfisarRAchman_OpeningFcn(hObject, eventd
 % varargin   unrecognized PropertyName/PropertyValue pairs from the
 %            command line (see VARARGIN)
 
-% Choose default command line output for TugasPCD_5_1301164036_MuhammadAlfisarRAchman
+% Choose default command line output for TugasPCD_6_1301164036_MuhammadAlfisarRAchman
 handles.output = hObject;
 
 % Update handles structure
 guidata(hObject, handles);
 
-% UIWAIT makes TugasPCD_5_1301164036_MuhammadAlfisarRAchman wait for user response (see UIRESUME)
+% UIWAIT makes TugasPCD_6_1301164036_MuhammadAlfisarRAchman wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
 
 % --- Outputs from this function are returned to the command line.
-function varargout = TugasPCD_5_1301164036_MuhammadAlfisarRAchman_OutputFcn(hObject, eventdata, handles)
+function varargout = TugasPCD_6_1301164036_MuhammadAlfisarRAchman_OutputFcn(hObject, eventdata, handles)
 varargout{1} = handles.output;
 
 
@@ -552,22 +552,10 @@ function Histeq_Callback(hObject, eventdata, handles)
       figure,imshow(uint8(img));
 
 function X2_Callback(hObject, eventdata, handles)
-% hObject    handle to X2 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of X2 as text
-%        str2double(get(hObject,'String')) returns contents of X2 as a double
 
 
 % --- Executes during object creation, after setting all properties.
 function X2_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to X2 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
@@ -575,22 +563,10 @@ end
 
 
 function Y2_Callback(hObject, eventdata, handles)
-% hObject    handle to Y2 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of Y2 as text
-%        str2double(get(hObject,'String')) returns contents of Y2 as a double
 
 
 % --- Executes during object creation, after setting all properties.
 function Y2_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to Y2 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
@@ -598,22 +574,10 @@ end
 
 
 function Y1_Callback(hObject, eventdata, handles)
-% hObject    handle to Y1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of Y1 as text
-%        str2double(get(hObject,'String')) returns contents of Y1 as a double
 
 
 % --- Executes during object creation, after setting all properties.
 function Y1_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to Y1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
@@ -621,22 +585,10 @@ end
 
 
 function X1_Callback(hObject, eventdata, handles)
-% hObject    handle to X1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of X1 as text
-%        str2double(get(hObject,'String')) returns contents of X1 as a double
 
 
 % --- Executes during object creation, after setting all properties.
 function X1_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to X1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
@@ -758,7 +710,7 @@ function Sharp_Callback(hObject, eventdata, handles)
   img = handles.image1; % Mendapatkan Data image yang telah dimasukan ke dalam data handles
     [r, c, colormap] = size(img); % Mengisi nilai r,c,dan colormap dengan size yang ada di dalam img
     img2 = []; % Menginisialisasikan variable img2 
-   temp(1,1) = 0; % Menginisialisasikan variable temp
+    temp(1,1) = 0; % Menginisialisasikan variable temp
     temp(1,2) = -1; % Menginisialisasikan variable temp
     temp(1,3) = 0; % Menginisialisasikan variable temp
     temp(2,1) = -1; % Menginisialisasikan variable temp
@@ -809,18 +761,13 @@ function Sharp_Callback(hObject, eventdata, handles)
 
 
 
-function edit7_Callback(hObject, eventdata, handles)
-% hObject    handle to edit7 (see GCBO)
+function R_Callback(hObject, eventdata, handles)
+% hObject    handle to R (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit7 as text
-%        str2double(get(hObject,'String')) returns contents of edit7 as a double
-
-
-% --- Executes during object creation, after setting all properties.
-function edit7_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit7 (see GCBO)
+function R_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to R (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -831,8 +778,281 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
-% --- Executes on button press in pushbutton25.
-function pushbutton25_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton25 (see GCBO)
+
+function G_Callback(hObject, eventdata, handles)
+% hObject    handle to G (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of G as text
+%        str2double(get(hObject,'String')) returns contents of G as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function G_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to G (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function Blue_Callback(hObject, eventdata, handles)
+% hObject    handle to Blue (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of Blue as text
+%        str2double(get(hObject,'String')) returns contents of Blue as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function Blue_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to Blue (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function merah_Callback(hObject, eventdata, handles)
+% hObject    handle to merah (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of merah as text
+%        str2double(get(hObject,'String')) returns contents of merah as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function merah_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to merah (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+function Thbutton_Callback(hObject, eventdata, handles)
+
+    img = handles.image1; % Mendapatkan Data image yang telah dimasukan ke dalam data handles
+    m = str2double(get(handles.merah, 'string')); % Mendapatkan Nilai dari edit text merah
+    h = str2double(get(handles.G, 'string')); % Mendapatkan Nilai dari edit text G
+    b = str2double(get(handles.Blue, 'string')); % Mendapatkan Nilai dari edit text Blue
+    [r, c, colormap] = size(img); % Mengisi nilai r,c,dan colormap dengan size yang ada di dalam img
+    
+    x = []; % Menginisialisasikan variable x
+    k = 1; % Menginisialisasikan variable k
+    
+    for i=1 : r %Menjelajahi pixel row
+        for j=1 : c % Menjelajahi pixel colom
+            tempm = false; % Mengisi tempm dengan false
+            temph = false; % Mengisi temph dengan false
+            tempb = false; % Mengisi tempb dengan false
+            if (img(i,j,1) >= m) % Mengecek apakah img(i,j,1) lebih besar sama dengan nilai m
+                tempm = true; % Mengisi tempm dengan true
+            end
+            if (img(i,j,2) >= h) % Mengecek apakah img(i,j,2) lebih besar sama dengan nilai h
+                temph = true; % Mengisi temph dengan true
+            end
+            if (img(i,j,3) >= b) % Mengecek apakah img(i,j,2) lebih besar sama dengan nilai b
+                tempb = true; % Mengisi tempb dengan true
+            end
+            if (tempm == true) && (temph == true) && (tempb == true) % Mengecek apakah nilai varible tempm, temph, tempb bernilai true
+                x(k,1) = i; % Mengisi nilai x indeks k,1 dengan i
+                x(k,2) = j; % Mengisi nilai x indeks k,2 dengan j
+                k = k+1;
+            end
+        end
+    end
+    
+    [a,b] = size(x); % Mengisi nilai a dan b dengan size dari x
+    
+    for e = 1 : a
+        for i=1 : r %Menjelajahi pixel row
+             for j=1 : c % Menjelajahi pixel colom
+                 if (x(e,1) == i) && (x(e,2) == j) % Mengecek apakah tempx indeks k sama dengan i dan nilai tempy indeks ke l samadengan j 
+                     img(i,j,:) = 0; %Menandakan pixel yang di pilih
+                 end 
+
+             end
+        end
+    end
+    figure,imshow(uint8(img));
+
+
+function x1growth_Callback(hObject, eventdata, handles)
+
+
+% --- Executes during object creation, after setting all properties.
+function x1growth_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to x1growth (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function x2rgrowth_Callback(hObject, eventdata, handles)
+% hObject    handle to x2rgrowth (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of x2rgrowth as text
+%        str2double(get(hObject,'String')) returns contents of x2rgrowth as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function x2rgrowth_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to x2rgrowth (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+function x = recursive(img,i,j,t,x,n,r,c,atas,kanan,bawah,kiri,ii,jj);
+
+         if (i ~= 1) && (atas ~= true) % Mengecek apakah i sama dengan 1 dan variable atas bernilai true
+
+            am = abs(img(ii,jj,1) - img(i-1,j,1)); % Mengisi nilai variable am dengan hasil absolut dari pengurangan
+            ah = abs(img(ii,jj,2) - img(i-1,j,2)); % Mengisi nilai variable ah dengan hasil absolut dari pengurangan
+            ab = abs(img(ii,jj,3) - img(i-1,j,3)); % Mengisi nilai variable ab dengan hasil absolut dari pengurangan
+
+            if (am <= t) && (ah <= t) && (ab <= t ) % Mengecek apakah nilai dari varible am, ah, dan ab lebih kecil dari nilai variable t
+                x = recursive(img,i-1,j,t,x,n+1,r,c,atas,kanan,bawah,kiri,ii,jj); % Melakukan recursive
+                x(n,1) = i; % Mengisi varible x dengan nilai i
+                x(n,2) = j; % Mengisi varible x dengan nilai j
+                kanan = true; % Mengeset variable kanan menjadi true
+                bawah = true; % Mengeset variable bawah menjadi true
+                kiri = true; % Mengeset variable kiri menjadi true
+                atas = true; % Mengeset variable atas menjadi true
+
+            end
+
+         end
+
+         if (j ~= 1) && (kiri ~= true) % Mengecek apakah j sama dengan 1 dan variable atas bernilai true
+             kim = abs(img(ii,jj,1) - img(i,j-1,1)); % Mengisi nilai variable kim dengan hasil absolut dari pengurangan
+             kih = abs(img(ii,jj,2) - img(i,j-1,2)); % Mengisi nilai variable kih dengan hasil absolut dari pengurangan
+             kib = abs(img(ii,jj,3) - img(i,j-1,3)); % Mengisi nilai variable kib dengan hasil absolut dari pengurangan
+
+             if(kim <= t) && (kih <= t) && (kib <= t ) % Mengecek apakah nilai dari varible kim, kih, dan kib lebih kecil dari nilai variable t
+                x = recursive(img,i,j-1,t,x,n+1,r,c,atas,kanan,bawah,kiri,ii,jj); % Melakukan recursive
+                kanan = true; % Mengeset variable kanan menjadi true
+                bawah = true; % Mengeset variable bawah menjadi true
+                x(n,1) = i; % Mengisi varible x dengan nilai i
+                x(n,2) = j; % Mengisi varible x dengan nilai j
+             end
+         end
+
+         if (j == 1) || ((kiri ~= true)&&(kim > t) && (kih > t) && (kib > t )) % Mengecek apakah j sama dengan 1 atau nilai dari kiri tidak sama dengan true dan nilai dari kim, kih, dan kib apakah lebih besar dari t
+            j = jj; % Mengeset nilai j dengan jj
+         end
+
+         if (j ~= c)  % Mengecek apakah j sama dengan c
+
+             km = abs(img(ii,jj,1) - img(i,j+1,1)); % Mengisi nilai variable km dengan hasil absolut dari pengurangan
+             kh = abs(img(ii,jj,2) - img(i,j+1,2)); % Mengisi nilai variable kh dengan hasil absolut dari pengurangan
+             kb = abs(img(ii,jj,3) - img(i,j+1,3)); % Mengisi nilai variable kb dengan hasil absolut dari pengurangan
+
+             if(kanan ~= true) && (km <= t) && (kh <= t) && (kb <= t ) % Mengecek apakah nilai dari varible kanan sadengan true dan km, kh, dan kb lebih kecil dari nilai variable t
+                kiri = true; % Mengeset variable kiri menjadi true
+                x = recursive(img,i,j+1,t,x,n+1,r,c,atas,kanan,bawah,kiri,ii,jj); % Mengeset variable bawah menjadi true
+                bawah = true; % Mengeset variable bawah menjadi true
+                x(n,1) = i; % Mengisi varible x dengan nilai i
+                x(n,2) = j; % Mengisi varible x dengan nilai j
+             end
+         end
+
+         j = jj; % Mengeset nilai j dengan jj
+        
+
+         if (i ~= r) % Mengecek apakah i sama dengan r
+
+             bm = abs(img(ii,jj,1) - img(i+1,j,1)); % Mengisi nilai variable bm dengan hasil absolut dari pengurangan
+             bh = abs(img(ii,jj,2) - img(i+1,j,2)); % Mengisi nilai variable bh dengan hasil absolut dari pengurangan
+             bb = abs(img(ii,jj,3) - img(i+1,j,3)); % Mengisi nilai variable bb dengan hasil absolut dari pengurangan
+
+             if (bawah ~= true) && (bm <= t) && (bh <= t) && (bb <= t ) % Mengecek apakah nilai dari varible bawah sama dengan true dan bm, bh, dan bb lebih kecil dari nilai variable t
+                atas = true; % Mengeset variable atas menjadi true
+                kiri = false; % Mengeset variable kiri menjadi true
+                x = recursive(img,i+1,j,t,x,n+1,r,c,atas,kanan,bawah,kiri,ii,jj); % Mengeset variable bawah menjadi true
+                x(n,1) = i; % Mengisi varible x dengan nilai i
+                x(n,2) = j; % Mengisi varible x dengan nilai j
+             end
+         end
+     
+
+% --- Executes on button press in pushbutton26.
+function pushbutton26_Callback(hObject, eventdata, handles)
+    img = handles.image1; % Mendapatkan Data image yang telah dimasukan ke dalam data handles
+    t = str2double(get(handles.th, 'string')); % Mendapatkan Nilai dari edit text th
+    x1 = str2double(get(handles.x1growth, 'string')); % Mendapatkan Nilai dari edit text x1growth
+    x2 = str2double(get(handles.x2rgrowth, 'string')); % Mendapatkan Nilai dari edit text x2rgrowth
+    [r, c, colormap] = size(img); % Mengisi nilai r,c,dan colormap dengan size yang ada di dalam img
+    
+    x = []; % Menginisialisasikan variable x   
+    n = 1; %Menginisialisasikan varible n
+    
+    atas = false; % Menginisialisasikan varible atas
+    kanan = false; % Menginisialisasikan varible kanan
+    bawah = false; % Menginisialisasikan varible bawah
+    kiri = false; % Menginisialisasikan varible kiri
+    
+    x(:,:) = recursive(img,x1,x2,t,x,n,r,c,atas,kanan,bawah,kiri,x1,x2); % Mengisi variable x dengan nilai dari fungsi recursive
+    [a,b] = size(x); % Mengisi nilai a dan b dengan ukuran dari variable x
+    for k = 1 : a % Menjelajahi data pada X  
+        for i=1 : r %Menjelajahi pixel row
+            for j=1 : c % Menjelajahi pixel colom
+                if (i == x(k,1)) && (j == x(k,2)) % Jika nilai i nama dengan nilai x index ke k,1 dan nilai j sama dengan nilai x index ke k,2 maka jalankan perintah dibawah
+                    img(i,j,:) = 0; %mengisi nilai pada img(i,j,:) dengan nilai 0 untuk menandatakan area yang di pilih pada gambar
+                end
+            end
+        end
+    end
+
+    disp(x); % Menampilakn nilai dari cariable x
+    figure,imshow(uint8(img));
+     
+function th_Callback(hObject, eventdata, handles)
+% hObject    handle to th (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of th as text
+%        str2double(get(hObject,'String')) returns contents of th as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function th_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to th (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
