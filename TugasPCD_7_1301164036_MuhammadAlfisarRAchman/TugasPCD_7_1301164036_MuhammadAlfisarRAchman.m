@@ -1169,7 +1169,7 @@ function Penipisan_Callback(hObject, eventdata, handles)
  x2 = str2double(get(handles.x2tebal, 'string')); % Mendapatkan Nilai dari edit text x2tipis
  y1 = str2double(get(handles.y1tebal, 'string')); % Mendapatkan Nilai dari edit text y1tipis
  y2 = str2double(get(handles.y2tebal, 'string')); % Mendapatkan Nilai dari edit text y2tipis
- [m, n, colormap] = size(img); % Mengisi nilai r,c,dan colormap dengan size yang ada di dalam img
+ 
  
  % Inisialisasi kernel untuk penipisan
  temp(1,1) = 0; 
@@ -1209,3 +1209,10 @@ function Penipisan_Callback(hObject, eventdata, handles)
   figure,imshow(img2),title('Erosi');  
   figure,imshow(img);
  
+
+
+% --- Executes on button press in Kompresi.
+function Kompresi_Callback(hObject, eventdata, handles)
+% hObject    handle to Kompresi (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)

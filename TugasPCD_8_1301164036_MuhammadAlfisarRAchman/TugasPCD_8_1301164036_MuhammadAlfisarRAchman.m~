@@ -1,10 +1,10 @@
-function varargout = TugasPCD_6_1301164036_MuhammadAlfisarRAchman(varargin)
+function varargout = TugasPCD_8_1301164036_MuhammadAlfisarRAchman(varargin)
 
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
                    'gui_Singleton',  gui_Singleton, ...
-                   'gui_OpeningFcn', @TugasPCD_6_1301164036_MuhammadAlfisarRAchman_OpeningFcn, ...
-                   'gui_OutputFcn',  @TugasPCD_6_1301164036_MuhammadAlfisarRAchman_OutputFcn, ...
+                   'gui_OpeningFcn', @TugasPCD_8_1301164036_MuhammadAlfisarRAchman_OpeningFcn, ...
+                   'gui_OutputFcn',  @TugasPCD_8_1301164036_MuhammadAlfisarRAchman_OutputFcn, ...
                    'gui_LayoutFcn',  [], ...
                    'gui_Callback',   []);
 if nargin && ischar(varargin{1})
@@ -19,8 +19,8 @@ end
 % End initialization code - DO NOT EDIT
 
 
-% --- Executes just before TugasPCD_6_1301164036_MuhammadAlfisarRAchman is made visible.
-function TugasPCD_6_1301164036_MuhammadAlfisarRAchman_OpeningFcn(hObject, eventdata, handles, varargin)
+% --- Executes just before TugasPCD_8_1301164036_MuhammadAlfisarRAchman is made visible.
+function TugasPCD_8_1301164036_MuhammadAlfisarRAchman_OpeningFcn(hObject, eventdata, handles, varargin)
 % This function has no output args, see OutputFcn.
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -28,18 +28,18 @@ function TugasPCD_6_1301164036_MuhammadAlfisarRAchman_OpeningFcn(hObject, eventd
 % varargin   unrecognized PropertyName/PropertyValue pairs from the
 %            command line (see VARARGIN)
 
-% Choose default command line output for TugasPCD_6_1301164036_MuhammadAlfisarRAchman
+% Choose default command line output for TugasPCD_8_1301164036_MuhammadAlfisarRAchman
 handles.output = hObject;
 
 % Update handles structure
 guidata(hObject, handles);
 
-% UIWAIT makes TugasPCD_6_1301164036_MuhammadAlfisarRAchman wait for user response (see UIRESUME)
+% UIWAIT makes TugasPCD_8_1301164036_MuhammadAlfisarRAchman wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
 
 % --- Outputs from this function are returned to the command line.
-function varargout = TugasPCD_6_1301164036_MuhammadAlfisarRAchman_OutputFcn(hObject, eventdata, handles)
+function varargout = TugasPCD_8_1301164036_MuhammadAlfisarRAchman_OutputFcn(hObject, eventdata, handles)
 varargout{1} = handles.output;
 
 
@@ -894,6 +894,15 @@ function x2rgrowth_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+function x2rgrowth_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to x1growth (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
 
 function x = recursive(img,i,j,t,x,n,r,c,atas,kanan,bawah,kiri,ii,jj);
 
@@ -968,8 +977,8 @@ function x = recursive(img,i,j,t,x,n,r,c,atas,kanan,bawah,kiri,ii,jj);
          end
      
 
-% --- Executes on button press in pushbutton26.
-function pushbutton26_Callback(hObject, eventdata, handles)
+% --- Executes on button press in Growth.
+function Growth_Callback(hObject, eventdata, handles)
     img = handles.image1; % Mendapatkan Data image yang telah dimasukan ke dalam data handles
     t = str2double(get(handles.th, 'string')); % Mendapatkan Nilai dari edit text th
     x1 = str2double(get(handles.x1growth, 'string')); % Mendapatkan Nilai dari edit text x1growth
@@ -1011,7 +1020,7 @@ end
 
 
 
-% function thpenebalan_Callback(hObject, eventdata, handles)
+function thpenebalan_Callback(hObject, eventdata, handles)
 
 function thpenebalan_CreateFcn(hObject, eventdata, handles)
 
@@ -1022,31 +1031,203 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
-% --- Executes on button press in pushbutton27.
-function pushbutton27_Callback(hObject, eventdata, handles)
+% --- Executes on button press in penebalan.
+function penebalan_Callback(hObject, eventdata, handles)
  img = handles.image1; % Mendapatkan Data image yang telah dimasukan ke dalam data handles
  img2 = handles.image1; % Mendapatkan Data image yang telah dimasukan ke dalam data handles
- t = str2double(get(handles.th, 'string')); % Mendapatkan Nilai dari edit text th
- [r, c, colormap] = size(img); % Mengisi nilai r,c,dan colormap dengan size yang ada di dalam img
+ x1 = str2double(get(handles.x1tebal, 'string')); % Mendapatkan Nilai dari edit text x1tebal
+ x2 = str2double(get(handles.x2tebal, 'string')); % Mendapatkan Nilai dari edit text x2tebal
+ y1 = str2double(get(handles.y1tebal, 'string')); % Mendapatkan Nilai dari edit text y1tebal
+ y2 = str2double(get(handles.y2tebal, 'string')); % Mendapatkan Nilai dari edit text y2tebal
  
- temp(1,1) = 200;
- temp(2,1) = 200;
- temp(2,2) = 150
  
- tmp2 = []
-%   for i=1 : r %Menjelajahi pixel row
-%         for j=1 : c % Menjelajahi pixel colom
-%             if(img(i,j) < t)
-%                 if(i == 1) && (j ~= c)
-% %                     temp2.append(img(i,j));
-% %                     temp2.append(temp(2,1));
-%                     max(img(i,j),temp(2,1));
-%                     
-%                 end
-%             end
-%         end
-%   end
+ % Inisialisasi kernel untuk penebalan
+ temp(1,1) = 1; 
+ temp(2,1) = 1;
+ temp(2,2) = 1;
+ 
+ % Inisialisasi image biner
+ img = im2bw(uint8(img));
+ img2 = img;
 
-disp(max(img(i,j),temp(2,1)));
+ % Proses dilasi
+ for i=x1 : x2 
+      for j=y1 : y2
+               if(i == x1) && (j ~= y2)
+                   a = min(img(i,j+1,:),temp(2,2));
+                   b = min(img(i,j,:),temp(2,1));
+                   img2(i,j,:) = min(a,b);
+                   
+               elseif(i == x1) && (j == y2)
+                   img2(i,j,:) = min(img(i,j,:),temp(2,1));
+
+               elseif(i ~= x1) && (j ~= y2)
+                   a = min(img(i,j+1,:),temp(2,2));
+                   b = min(img(i-1,j,:),temp(1,1));
+                   c = min(a,b);
+                   d = min(img(i,j,:),temp(2,1));
+                   img2(i,j,:) = min(c,d);
+
+               elseif(i ~= x1) && (j == y2)    
+                   a = min(img(i-1,j,:),temp(1,1));
+                   b = min(img(i,j,:),temp(2,1));
+                   img2(i,j,:) = min(a,b);
+
+               end
+       end
+ end
+  figure,imshow(img2),title('Dilasi');  
+  figure,imshow(img);
  
  
+
+
+
+function x2tebal_Callback(hObject, eventdata, handles)
+
+
+function x2tebal_CreateFcn(hObject, eventdata, handles)
+
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function x1tebal_Callback(hObject, eventdata, handles)
+
+
+function x1tebal_CreateFcn(hObject, eventdata, handles)
+
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function y2tebal_Callback(hObject, eventdata, handles)
+
+function y2tebal_CreateFcn(hObject, eventdata, handles)
+
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function y1tebal_Callback(hObject, eventdata, handles)
+
+function y1tebal_CreateFcn(hObject, eventdata, handles)
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function y1tipis_Callback(hObject, eventdata, handles)
+
+function y1tipis_CreateFcn(hObject, eventdata, handles)
+
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+function y2tipis_Callback(hObject, eventdata, handles)
+
+function y2tipis_CreateFcn(hObject, eventdata, handles)
+
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function x1tipis_Callback(hObject, eventdata, handles)
+
+function x1tipis_CreateFcn(hObject, eventdata, handles)
+
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function x2tipis_Callback(hObject, eventdata, handles)
+
+function x2tipis_CreateFcn(hObject, eventdata, handles)
+
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+% --- Executes on button press in Penipisan.
+function Penipisan_Callback(hObject, eventdata, handles)
+ img = handles.image1; % Mendapatkan Data image yang telah dimasukan ke dalam data handles
+ img2 = handles.image1; % Mendapatkan Data image yang telah dimasukan ke dalam data handles
+ x1 = str2double(get(handles.x1tebal, 'string')); % Mendapatkan Nilai dari edit text x1tipis
+ x2 = str2double(get(handles.x2tebal, 'string')); % Mendapatkan Nilai dari edit text x2tipis
+ y1 = str2double(get(handles.y1tebal, 'string')); % Mendapatkan Nilai dari edit text y1tipis
+ y2 = str2double(get(handles.y2tebal, 'string')); % Mendapatkan Nilai dari edit text y2tipis
+ 
+ 
+ % Inisialisasi kernel untuk penipisan
+ temp(1,1) = 0; 
+ temp(2,1) = 0;
+ temp(2,2) = 0;
+ 
+ % Inisialisasi image biner
+ img = im2bw(uint8(img));
+ img2 = img;
+
+ % Proses Erosi
+ for i=x1 : x2 
+      for j=y1 : y2
+               if(i == x1) && (j ~= y2)
+                   a = max(img(i,j+1,:),temp(2,2));
+                   b = max(img(i,j,:),temp(2,1));
+                   img2(i,j,:) = max(a,b);
+                   
+               elseif(i == x1) && (j == y2)
+                   img2(i,j,:) = max(img(i,j,:),temp(2,1));
+
+               elseif(i ~= x1) && (j ~= y2)
+                   a = max(img(i,j+1,:),temp(2,2));
+                   b = max(img(i-1,j,:),temp(1,1));
+                   c = max(a,b);
+                   d = max(img(i,j,:),temp(2,1));
+                   img2(i,j,:) = max(c,d);
+
+               elseif(i ~= x1) && (j == y2)    
+                   a = max(img(i-1,j,:),temp(1,1));
+                   b = max(img(i,j,:),temp(2,1));
+                   img2(i,j,:) = max(a,b);
+
+               end
+       end
+ end
+  figure,imshow(img2),title('Erosi');  
+  figure,imshow(img);
+ 
+
+
+% --- Executes on button press in Kompresi.
+function Kompresi_Callback(hObject, eventdata, handles)
+img = handles.image1; % Mendapatkan Data image yang telah dimasukan ke dalam data handles
+img = uint8(img); % merubah isi dari matriks img menjadi uint8
+[r, c, colormap] = size(img); % Mengisi nilai r,c,dan colormap dengan size yang ada di dalam img
+
+for i=1 : r %Menjelajahi pixel row
+    for j=1 : c %Menjelajahi pixel colom
+        if mod(img(i,j,:),5) == 0 % pengecekan apakah isi dari pixel tersebut di mod 5 hasilnya 
+            img(i,j,:) = img(i,j,:)/5;
+%             disp(img(i,j,:))
+        else
+            img(i,j,:) = int8(img(i,j,:)/5)+1;
+        end
+    end
+end
+imwrite(img, 'hasil kompresi.jpg');
+figure,imshow(img);
+disp(int8(10/5)+1);
+disp(mod(0,5))
